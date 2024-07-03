@@ -1,0 +1,16 @@
+meta {
+  name: Update Car
+  type: http
+  seq: 4
+}
+
+patch {
+  url: http://localhost:3000/cars/1
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  brand: Volvo
+  model: XC40
+}

@@ -1,0 +1,16 @@
+meta {
+  name: Create Car
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3000/cars
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  brand: Volvo
+  model: XC40
+}

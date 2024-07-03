@@ -1,0 +1,16 @@
+meta {
+  name: Delete Car
+  type: http
+  seq: 5
+}
+
+delete {
+  url: http://localhost:3000/cars/1
+  body: none
+  auth: none
+}
+
+body:form-urlencoded {
+  brand: Volvo
+  model: XC40
+}
