@@ -1,0 +1,16 @@
+meta {
+  name: Delete Brand
+  type: http
+  seq: 5
+}
+
+delete {
+  url: http://localhost:3000/brands/4e9cd94a-bd8f-4ab1-a44d-b73e9cdf2486
+  body: none
+  auth: none
+}
+
+body:form-urlencoded {
+  brand: Volvo
+  model: XC40
+}

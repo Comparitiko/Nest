@@ -1,0 +1,15 @@
+meta {
+  name: Update Brand
+  type: http
+  seq: 4
+}
+
+patch {
+  url: http://localhost:3000/brands/25e1cfd6-0130-4b06-aa5c-f7da0ff71e49
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  name: Audi
+}
