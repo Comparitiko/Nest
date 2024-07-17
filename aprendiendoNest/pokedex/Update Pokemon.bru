@@ -1,0 +1,18 @@
+meta {
+  name: Update Pokemon
+  type: http
+  seq: 4
+}
+
+patch {
+  url: http://localhost:3000/api/v2/pokemon/66922df4277d851f0ec10406
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "no": 1,
+    "name": "venusaur"
+  }
+}

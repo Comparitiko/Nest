@@ -1,0 +1,16 @@
+meta {
+  name: Get All Pokemons
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:3000/api/v2/pokemon?skip=200&limit=20
+  body: none
+  auth: none
+}
+
+params:query {
+  skip: 200
+  limit: 20
+}
