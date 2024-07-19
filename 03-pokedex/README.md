@@ -28,15 +28,34 @@ npm i -g @nestjs/cli
 docker-compose up
 ```
 
-5. Seed de datos
+5. Clonar el archivo **.env.template** y renombrarlo a _.env_
+
+6. Rellenar los datos en el archivo _.env_
+
+7. Ejecutar la aplicación en desarrollo
+
+```
+pnpm run start:dev
+```
+
+7. Seed de datos
 
 ```
 http://localhost:3000/api/v2/seed
-``
+```
+
+# Build de producción
+
+1. Crear el archivo ```.env.prod'''
+2. Rellenar los datos en el archivo _.env.prod_
+3. Crear la imagen de Docker
+
+```
+docker compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+```
 
 ## Stack usado
 
 - MongoDB
 - NestJS
 - TypeScript
-```
