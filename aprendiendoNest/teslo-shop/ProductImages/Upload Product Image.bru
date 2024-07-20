@@ -1,0 +1,19 @@
+meta {
+  name: Upload Product Image
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/api/files/product
+  body: multipartForm
+  auth: none
+}
+
+body:form-urlencoded {
+  file: 
+}
+
+body:multipart-form {
+  file: @file(/home/comparitiko/datos_disk/Wallpapers/164628.jpg)
+}

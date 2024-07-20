@@ -31,4 +31,10 @@ docker-compose up -d
 npm run start:dev
 ```
 
+6. Hacer una petición **GET** a la ruta
+
+```bash
+https://localhost:3000/api/seed
+```
+
 ## Production
