@@ -1,0 +1,23 @@
+meta {
+  name: Update Product
+  type: http
+  seq: 7
+}
+
+patch {
+  url: http://localhost:3000/api/products/3f4cf0fd-8bc7-45a0-9d3c-c1aa8b6eba0f
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "price": 200.99,
+    "title": "HelloWorld`s shirt",
+    "slug": "JGGAmparitiko",
+    "tags": [
+      "Amarillo",
+      "Grande"
+    ]
+  }
+}

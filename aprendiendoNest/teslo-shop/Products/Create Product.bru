@@ -1,0 +1,26 @@
+meta {
+  name: Create Product
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/api/products
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "This is fine shirt",
+    "sizes": ["SM", "M", "L", "XL"],
+    "gender": "man",
+    "price": 59.99,
+    "tags": [
+      "Amarillo",
+      "Imagen perro",
+      "Llamas"
+    ],
+    "description": "Esta camiseta hace referencia al mitico meme de un perro entre llamas con un comentario que dice 'This is fine'"
+  }
+}
