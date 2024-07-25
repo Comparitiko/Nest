@@ -1,0 +1,15 @@
+meta {
+  name: Test Private Route
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{API_HOST}}/api/auth/private3
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg4NmY5ODNiLWM5YzItNDNmMi1iODdlLWMyMmE5NmY0NTUxNSIsImlhdCI6MTcyMTkyODYzOSwiZXhwIjoxNzIxOTM1ODM5fQ.L6ymvF9PQgqbxU9ObJ15kjRE4D-CVAfqlK4ahDRmOKU
+}

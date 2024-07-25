@@ -7,7 +7,6 @@ export class SeedService {
 	constructor(
 		@Inject()
 		private readonly productsService: ProductsService,
-		private readonly productsRepository: ProductsService,
 	) {}
 
 	async runSeed() {
