@@ -32,19 +32,19 @@ export const initialData: SeedData = {
 	users: [
 		{
 			email: 'gabi@gmail.com',
-			fullName: 'Gabriel Collado Yañez',
+			fullName: 'Gabriel',
 			password: 'Abc123',
 			roles: [VALID_ROLES.ADMIN, VALID_ROLES.USER],
 		},
 		{
 			email: 'maria@gmail.com',
-			fullName: 'Maria pepita',
+			fullName: 'Maria',
 			password: 'Abc123',
 			roles: [VALID_ROLES.USER, VALID_ROLES.SUPER_USER],
 		},
 		{
 			email: 'antonio@gmail.com',
-			fullName: 'Antonio juan',
+			fullName: 'Antonio',
 			password: 'Abc123',
 			roles: [VALID_ROLES.USER],
 		},
