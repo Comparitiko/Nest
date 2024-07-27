@@ -1,7 +1,9 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestExpressApplication } from '@nestjs/platform-express';
+
+import { AppModule } from './app.module';
 
 async function bootstrap() {
 	const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -26,6 +28,15 @@ async function bootstrap() {
 	if (!PORT || isNaN(PORT)) {
 		throw new Error('Define the PORT environment variable');
 	}
+
+	// Configurar la documentacion de swagger
+	const config = new DocumentBuilder()
+		.setTitle('TesloShop API')
+		.setDescription('TesloShop endpoints')
+		.setVersion('1.0')
+		.build();
+	const document = SwaggerModule.createDocument(app, config);
+	SwaggerModule.setup('api', app, document);
 
 	await app.listen(PORT);
 	logger.log(`Server running on port ${PORT}`);
