@@ -5,9 +5,13 @@ meta {
 }
 
 patch {
-  url: {{API_HOST}}/api/products/f5c1accf-83ad-4c09-9608-72df778388eb
+  url: {{API_HOST}}/api/products/08685d50-d6ec-4d9a-b128-9afb0c49b19a
   body: json
-  auth: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg4NmY5ODNiLWM5YzItNDNmMi1iODdlLWMyMmE5NmY0NTUxNSIsImlhdCI6MTcyMjA3MTEwMSwiZXhwIjoxNzIyMDc4MzAxfQ.ISPyaPxogzdU4IDFawuq2QS6IlkXLMaab-77T0IRe30
 }
 
 body:json {

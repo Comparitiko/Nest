@@ -1,3 +1,5 @@
+import { VALID_ROLES } from 'src/auth/interfaces/valid-roles';
+
 interface SeedProduct {
 	description: string;
 	images: string[];
@@ -11,14 +13,42 @@ interface SeedProduct {
 	gender: 'men' | 'women' | 'kid' | 'unisex';
 }
 
+interface SeedUser {
+	email: string;
+	fullName: string;
+	password: string;
+	roles: string[];
+}
+
 type ValidSizes = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL' | 'XXXL';
 type ValidTypes = 'shirts' | 'pants' | 'hoodies' | 'hats';
 
 interface SeedData {
 	products: SeedProduct[];
+	users: SeedUser[];
 }
 
 export const initialData: SeedData = {
+	users: [
+		{
+			email: 'gabi@gmail.com',
+			fullName: 'Gabriel Collado Yañez',
+			password: 'Abc123',
+			roles: [VALID_ROLES.ADMIN, VALID_ROLES.USER],
+		},
+		{
+			email: 'maria@gmail.com',
+			fullName: 'Maria pepita',
+			password: 'Abc123',
+			roles: [VALID_ROLES.USER, VALID_ROLES.SUPER_USER],
+		},
+		{
+			email: 'antonio@gmail.com',
+			fullName: 'Antonio juan',
+			password: 'Abc123',
+			roles: [VALID_ROLES.USER],
+		},
+	],
 	products: [
 		{
 			description:

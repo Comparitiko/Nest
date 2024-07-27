@@ -1,0 +1,15 @@
+meta {
+  name: Check Auth Status
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{API_HOST}}/api/auth/check-status
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViMjgyMmU4LWY3MTgtNGFjNi1hMGU4LTJkNGMzOGNjN2VlYiIsImlhdCI6MTcyMjA3NTg3MywiZXhwIjoxNzIyMDgzMDczfQ.3pUrWofnnswxgLX3aBMGTcadBhWYowfUZpOg5v1BkA4
+}

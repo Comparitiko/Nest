@@ -14,6 +14,7 @@ import { Product, ProductImage } from './entities';
 
 import { validate as isUUID } from 'uuid';
 import { ConfigService } from '@nestjs/config';
+import { User } from 'src/auth/entities/user.entity';
 
 @Injectable()
 export class ProductsService {
@@ -32,12 +33,13 @@ export class ProductsService {
 		private readonly configService: ConfigService,
 	) {}
 
-	async create(createProductDto: CreateProductDto) {
+	async create(createProductDto: CreateProductDto, user: User) {
 		const { images = [], ...productDetails } = createProductDto;
 
 		try {
 			const product = this.productRepository.create({
 				...productDetails,
+				user,
 				images: images.map((image) => {
 					return this.productImageRepository.create({ url: image });
 				}),
@@ -94,7 +96,7 @@ export class ProductsService {
 		return product;
 	}
 
-	async update(id: string, updateProductDto: UpdateProductDto) {
+	async update(id: string, updateProductDto: UpdateProductDto, user: User) {
 		const { images, ...toUpdate } = updateProductDto;
 
 		const product = await this.productRepository.preload({
@@ -119,6 +121,8 @@ export class ProductsService {
 					this.productImageRepository.create({ url: image }),
 				);
 			}
+
+			product.user = user;
 
 			// await this.productRepository.save( product );
 			await queryRunner.manager.save(product);

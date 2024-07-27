@@ -43,13 +43,23 @@ export class AuthService {
 
 			return {
 				...user,
-				token: this.getJwtToken({ id: user.id }),
+				token: this.generateToken(user),
 			};
 
 			// TODO: Return JWT
 		} catch (error) {
 			this.handleDBException(error);
 		}
+	}
+
+	async checkAuthStatus(user: User) {
+		const { id, email, fullName } = user;
+		return {
+			id,
+			email,
+			fullName,
+			token: this.generateToken(user),
+		};
 	}
 
 	async login(loginUserDto: LoginUserDto) {
@@ -78,6 +88,10 @@ export class AuthService {
 			...userDbData,
 			token: this.getJwtToken({ id }),
 		};
+	}
+
+	private generateToken(user: User) {
+		return this.getJwtToken({ id: user.id });
 	}
 
 	private getJwtToken(payload: JwtPayload) {

@@ -7,10 +7,14 @@ meta {
 get {
   url: {{API_HOST}}/api/products
   body: none
-  auth: none
+  auth: bearer
 }
 
 params:query {
   ~limit: 2
   ~offset: 3
+}
+
+auth:bearer {
+  token: 
 }
